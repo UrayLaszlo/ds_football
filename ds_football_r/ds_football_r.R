@@ -10,6 +10,8 @@ pbp_r |>
 
 pbp_r |>
   group_by(passer_id, passer) |>
-  summarize(n = n(), adot = mean(air_yards, na.rm = TRUE)) |> filter(n >= 100 & !is.na(passer)) |>
+  summarize(n = n(), adot = mean(air_yards, na.rm = TRUE)) |>
+  filter(n >= 100 & !is.na(passer)) |>
   arrange(-adot) |>
   print(n = Inf)
+
